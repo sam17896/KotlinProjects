@@ -49,10 +49,39 @@ fun main(args : Array<String>){
 
     println("A is a Char ${letterGrade is Char}")
 
-    //casting
+    //Casting
     println("3.14 to Int : "  + (3.14.toInt()) )
     println("A to Int : "  + ('A'.toInt()) )
     println("65 to char : "  + (65.toChar()) )
 
-    
+    //Strings
+    val myName = "Ahsan Sohail"
+    val lonStr = """This is a
+    long strin """
+
+    var fName : String = "Ahsan"
+    var lName : String = "Sohail"
+
+    fName = "Saad"
+
+    var fullName = fName + " " + lName
+
+    println("Name : $fullName")
+
+    println("1 + 2 = ${1+2}")
+    println("String lenght = ${lonStr.length}")
+
+    var str1 = "A random string"
+    var str2 = "a random string"
+
+    println("String Equal : ${str1.equals(str2)}")
+
+    println("Compare A to B : ${"A".compareTo("B")}")
+
+    println("2nd index : ${str1.get(2)}")
+
+    println("index 2 - 7 : ${str1.subSequence(2,8)}")
+
+    println("Contains random : ${str1.contains("random")}")
+
 }
