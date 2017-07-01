@@ -75,13 +75,33 @@ fun main(args : Array<String>){
     var str2 = "a random string"
 
     println("String Equal : ${str1.equals(str2)}")
-
     println("Compare A to B : ${"A".compareTo("B")}")
-
     println("2nd index : ${str1.get(2)}")
-
     println("index 2 - 7 : ${str1.subSequence(2,8)}")
-
     println("Contains random : ${str1.contains("random")}")
+
+    //Arrays
+    var myArray  = arrayOf(1, 1.23, "Dog")
+    println(myArray[2])
+
+    myArray[1] = 3.14
+
+    println("Array Length : ${myArray.size}")
+
+    println("Dog in Array : ${myArray.contains("Dog")}")
+
+    var partArray = myArray.copyOfRange(0,1)
+
+    println("First : ${myArray.first()}")
+    println("Dog Index : ${myArray.indexOf("Dog")}")
+
+    var sqArray = Array(5, {x -> x*x})
+
+    println(sqArray[2])
+    var arr2 : Array<Int> = arrayOf(1,2,3)
+
+
+    
+
 
 }
