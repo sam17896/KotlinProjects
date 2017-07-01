@@ -202,7 +202,11 @@ fun main(args : Array<String>){
     val multiply = {num1 : Int , num2 :Int -> num1 * num2}
 
     println("5 * 3 = ${multiply(5,3)}")
+
+    println("5! = ${fact(5)}")
+
     
+
 }
 
 fun nextTwo(num : Int) : Pair<Int,Int> {
@@ -213,4 +217,13 @@ fun getSum(vararg nums : Int) : Int {
     nums.forEach { n -> sum += n }
 
     return sum
+}
+
+fun fact(x : Int) : Int {
+    tailrec fun factTail(y:Int, z : Int) : Int {
+        if(y==0) return z
+        else return factTail( y-1, y*z)
+    }
+
+    return factTail(x,1)
 }
