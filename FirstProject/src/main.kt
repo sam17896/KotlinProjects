@@ -3,10 +3,12 @@
  */
 package demo
 fun main(args : Array<String>){
+    // Environment Setup
     println("Hello World")
 
-    val name = "Derek"
 
+    //Types
+    val name = "Derek"
     var myAge = 42
 
     var bigInt : Int = Int.MAX_VALUE
@@ -47,10 +49,10 @@ fun main(args : Array<String>){
 
     println("A is a Char ${letterGrade is Char}")
 
+    //casting
+    println("3.14 to Int : "  + (3.14.toInt()) )
+    println("A to Int : "  + ('A'.toInt()) )
+    println("65 to char : "  + (65.toChar()) )
 
-
-
-
-
-
+    
 }
