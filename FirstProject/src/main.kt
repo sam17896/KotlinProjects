@@ -177,5 +177,40 @@ fun main(args : Array<String>){
         println("Index : $index Value : $value")
     }
 
+    //Functions
 
+    fun add(num1 : Int, num2: Int) : Int = num1 + num2
+    println("5 + 4 = ${add(5,4)} " )
+
+    fun sub(num1 : Int = 1, num2: Int = 1) = num1 - num2
+    println("5 - 4 = ${sub(5,4)} " )
+
+    println("4 - 5 = ${sub(num2=5, num1= 4)}")
+
+    fun sayHello(name: String) : Unit = println("Hello $name")
+
+    sayHello("Ahsan")
+
+    val (two,three) = nextTwo(1)
+
+    println(two)
+    println(three)
+
+
+    println("Sum: ${getSum(1,2,3,4,5)}")
+
+    val multiply = {num1 : Int , num2 :Int -> num1 * num2}
+
+    println("5 * 3 = ${multiply(5,3)}")
+    
+}
+
+fun nextTwo(num : Int) : Pair<Int,Int> {
+    return Pair(num+1, num+2)
+}
+fun getSum(vararg nums : Int) : Int {
+    var sum = 0
+    nums.forEach { n -> sum += n }
+
+    return sum
 }
