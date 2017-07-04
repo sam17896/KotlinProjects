@@ -203,9 +203,27 @@ fun main(args : Array<String>){
 
     println("5 * 3 = ${multiply(5,3)}")
 
+    //Recursion
     println("5! = ${fact(5)}")
 
-    
+
+    //Higher Order Function
+    val numList = 1..20
+    val eventList = numList.filter{ it % 2 == 0}
+    eventList.forEach{ n-> println(n) }
+
+
+    val mult3 = makeMathFunc(3)
+
+    println("5 * 3 = ${mult3(5)}")
+
+    val multiply2 = {num1 : Int -> num1 * 2}
+
+    val numList2 = arrayOf(1,2,3,4,5)
+
+    mathonList(numList2, mult3)
+
+
 
 }
 
@@ -219,6 +237,7 @@ fun getSum(vararg nums : Int) : Int {
     return sum
 }
 
+//Recursion
 fun fact(x : Int) : Int {
     tailrec fun factTail(y:Int, z : Int) : Int {
         if(y==0) return z
@@ -226,4 +245,16 @@ fun fact(x : Int) : Int {
     }
 
     return factTail(x,1)
+}
+
+
+//Higher Order Function
+
+fun makeMathFunc(num1 : Int) : (Int) -> Int = {num2 -> num1 * num2}
+
+fun mathonList(numList : Array<Int> , myFunc: (num: Int) -> Int){
+    for(num in numList){
+        println("MathOnList ${myFunc(num)}")
+
+    }
 }
