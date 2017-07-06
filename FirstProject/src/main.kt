@@ -291,12 +291,38 @@ fun main(args : Array<String>){
     map.remove(2)
 
     for((x,y) in map){
-        println("Ket: $x Value : $y")
+        println("Key: $x Value : $y")
     }
+
+    //class
+    val bowser = Animal("Bowser", 20.0 , 13.5)
+    bowser.getInfo()
 
 
 
 }
+
+//Class
+open class Animal(val name:String,
+                   var height : Double,
+                   var weight : Double){
+    init{
+        val regex = Regex(".*\\d+.*")
+        require(!name.matches(regex)){
+            "Animal Name Cant Contain Number"
+        }
+
+        require(height>0){"Height must be Greater then 0"}
+        require(weight>0){"Weight must be Greater then 0"}
+    }
+
+    open fun getInfo() : Unit{
+        println("$name is $height tall and weighs $weight")
+    }
+}
+
+
+
 
 fun nextTwo(num : Int) : Pair<Int,Int> {
     return Pair(num+1, num+2)
