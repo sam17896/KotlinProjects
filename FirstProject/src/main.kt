@@ -298,6 +298,10 @@ fun main(args : Array<String>){
     val bowser = Animal("Bowser", 20.0 , 13.5)
     bowser.getInfo()
 
+    //inheritance
+    val spot = Dog("Spot", 20.0, 13.5 , "John")
+    spot.getInfo()
+
 
 
 }
@@ -353,5 +357,16 @@ fun mathonList(numList : Array<Int> , myFunc: (num: Int) -> Int){
     for(num in numList){
         println("MathOnList: ${myFunc(num)}")
 
+    }
+}
+
+//Inheritance
+
+class Dog (name: String,
+           height: Double,
+            weight: Double,
+           var owner :String) : Animal(name,height,weight){
+    override fun getInfo() : Unit{
+        println("$name is $height tall and weighs $weight and is owned b $owner")
     }
 }
