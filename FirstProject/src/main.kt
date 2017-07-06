@@ -306,6 +306,26 @@ fun main(args : Array<String>){
     val tweety = Bird("Tweety", true)
     tweety.fly(10.0)
 
+    //null Safety
+
+    var nullVal : String? = null
+
+    fun myfun() : String? {
+        return null
+    }
+
+    var nullVal2 = myfun()
+
+    if(nullVal2 != null){
+        println("nullVal2.length")
+    }
+
+    var nullVal3 = nullVal2!!.length
+
+    
+
+
+
 
 
 }
