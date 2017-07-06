@@ -243,6 +243,24 @@ fun main(args : Array<String>){
     val times7 = numList3.map{it * 7}
     times7.forEach{n-> println("*7 : $n")}
 
+    //Exception Handling
+
+    val divisor = 2
+
+    try {
+        if (divisor == 0){
+            throw IllegalArgumentException("Can't Divide By zero")
+        } else {
+            println("5 / $divisor= ${5/divisor}")
+        }
+    } catch (e : IllegalArgumentException) {
+        println("${e.message}")
+    }
+
+
+    
+
+
 }
 
 fun nextTwo(num : Int) : Pair<Int,Int> {
