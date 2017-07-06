@@ -302,6 +302,10 @@ fun main(args : Array<String>){
     val spot = Dog("Spot", 20.0, 13.5 , "John")
     spot.getInfo()
 
+    //interface
+    val tweety = Bird("Tweety", true)
+    tweety.fly(10.0)
+
 
 
 }
@@ -368,5 +372,20 @@ class Dog (name: String,
            var owner :String) : Animal(name,height,weight){
     override fun getInfo() : Unit{
         println("$name is $height tall and weighs $weight and is owned b $owner")
+    }
+}
+//Interface
+interface Flyable {
+    var flies : Boolean
+    fun fly(distMile : Double) : Unit
+}
+
+class Bird constructor(val name:String,
+                       override var flies: Boolean =true) :
+                        Flyable {
+    override fun fly(distMile: Double) {
+        if(flies){
+            println("$name flies $distMile miles")
+        }
     }
 }
